@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: skynet-engine
+    env: node
+    rootDir: engine
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: DATABASE_URL
+        sync: false
+      - key: CONTEXT7_API_KEY
+        sync: false
+      - key: SENTRY_AUTH_TOKEN
+        sync: false
+      - key: SKYNET_SECRET
+        generateValue: true
+    autoDeploy: true
+    healthcheckPath: /health
