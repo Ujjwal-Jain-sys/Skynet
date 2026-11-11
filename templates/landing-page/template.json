@@ -1,0 +1,12 @@
+{
+  "name": "landing-page",
+  "description": "Single-page marketing site for a product or service",
+  "category": "marketing",
+  "pages": ["/", "/pricing", "/contact"],
+  "primaryConversion": "signup",
+  "features": ["hero section", "features grid", "pricing table", "contact form", "footer"],
+  "seo": {
+    "primaryKeyword": "{business} {service}",
+    "intent": "commercial"
+  }
+}

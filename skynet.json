@@ -1,0 +1,20 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "name": "skynet",
+  "version": "0.1.0",
+  "description": "Multi-agent AI website builder for non-technical users",
+  "engine": {
+    "port": 3001,
+    "apiUrl": "http://localhost:3001"
+  },
+  "web": {
+    "port": 3000,
+    "engineUrl": "http://localhost:3001"
+  },
+  "phases": {
+    "S": "skills — complete (78 skills)",
+    "A": "agents — complete (master + 13 departments)",
+    "T": "tooling — complete (commands, config, plugins)",
+    "B": "build — in progress (engine, web, templates, infra)"
+  }
+}
