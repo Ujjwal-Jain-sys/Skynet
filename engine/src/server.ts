@@ -109,10 +109,8 @@ app.post("/projects/:id/delegate/:department", async (req, res) => {
     res.json({
       projectId: req.params.id,
       department,
-      status: "delegated,
+      status: "delegated",
       message: `Delegated ${department} workstream. Launch via OpenCode subagent.`,
-    })
-  } catch (err) {
     })
   } catch (err) {
     if (err instanceof z.ZodError) {
