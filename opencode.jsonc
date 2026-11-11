@@ -1,0 +1,70 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  "models": {
+    "default": "opencode/nemotron-3.5-super-vl-free",
+    "skynet-master": "opencode/nemotron-3.5-super-vl-free",
+    "requirements-analysis": "opencode/nemotron-3.5-super-vl-free",
+    "product-strategist": "opencode/nemotron-3.5-super-vl-free",
+    "ux-architect": "opencode/nemotron-3.5-super-vl-free",
+    "ui-design": "opencode/nemotron-3.5-super-vl-free",
+    "frontend": "opencode/nemotron-3.5-super-vl-free",
+    "backend": "opencode/nemotron-3.5-super-vl-free",
+    "database-architect": "opencode/nemotron-3.5-super-vl-free",
+    "devops": "opencode/nemotron-3.5-super-vl-free",
+    "qa-tester": "opencode/nemotron-3.5-super-vl-free",
+    "security-auditor": "opencode/nemotron-3.5-super-vl-free",
+    "seo-specialist": "opencode/nemotron-3.5-super-vl-free",
+    "content-writer": "opencode/nemotron-3.5-super-vl-free",
+    "project-manager": "opencode/nemotron-3.5-super-vl-free"
+  },
+
+  "permissions": [
+    { "action": "opencode_subagent", "resource": "*", "effect": "allow" },
+    { "action": "opencode_skill", "resource": "*", "effect": "allow" },
+    { "action": "opencode_read_file", "resource": "*", "effect": "allow" },
+    { "action": "opencode_write_file", "resource": "*", "effect": "allow" },
+    { "action": "opencode_shell", "resource": "*", "effect": "allow" },
+    { "action": "opencode_grep", "resource": "*", "effect": "allow" },
+    { "action": "opencode_glob", "resource": "*", "effect": "allow" },
+    { "action": "opencode_search", "resource": "*", "effect": "allow" },
+    { "action": "opencode_list_mcp_resources", "resource": "*", "effect": "allow" },
+    { "action": "opencode_read_mcp_resource", "resource": "*", "effect": "allow" },
+    { "action": "context7_*", "resource": "*", "effect": "allow" },
+    { "action": "playwright_*", "resource": "*", "effect": "allow" },
+    { "action": "postgres_*", "resource": "*", "effect": "allow" },
+    { "action": "sentry_*", "resource": "*", "effect": "allow" },
+    { "action": "skynet_*", "resource": "*", "effect": "allow" }
+  ],
+
+  "mcp": {
+    "servers": {
+      "context7": {
+        "type": "remote",
+        "url": "https://mcp.context7.com/mcp"
+      },
+      "playwright": {
+        "type": "local",
+        "command": ["npx", "-y", "@playwright/mcp"]
+      },
+      "postgres": {
+        "type": "local",
+        "command": ["npx", "-y", "@modelcontextprotocol/server-postgres"],
+        "environment": {
+          "DATABASE_URL": "{env:DATABASE_URL}"
+        }
+      },
+      "sentry": {
+        "type": "remote",
+        "url": "https://mcp.sentry.dev/mcp"
+      }
+    }
+  },
+
+  "plugins": [
+    ".opencode/plugins/skynet-orchestrator",
+    ".opencode/plugins/skynet-task-tracker",
+    ".opencode/plugins/skynet-notifier",
+    ".opencode/plugins/skynet-guardrails"
+  ]
+}

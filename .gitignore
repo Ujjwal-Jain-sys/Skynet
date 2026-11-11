@@ -1,0 +1,71 @@
+# ============================================================================
+# Skynet .gitignore — Prevents credential/secret leaks and build artifacts
+# ============================================================================
+
+# --- Environment files & secrets (NEVER commit real values) ---
+.env
+.env.*
+!.env.example
+!.env.sample
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# --- Secret / key files ---
+*.key
+*.pem
+*.secret
+*.crt
+*.p12
+*.jks
+secrets/
+secret*/
+credentials/
+credential*/
+*.enc
+
+# --- IDE / editor ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# --- Build / output directories ---
+node_modules/
+.next/
+dist/
+build/
+out/
+*.tsbuildinfo
+
+# --- Logs ---
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- TypeScript / package ---
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# --- OpenCode local runtime state (not project source) ---
+.opencode/local/
+.opencode/*.json
+.opencode/sessions/
+
+# --- Misc ---
+*.tgz
+*.tar.gz
+.zip
+.coverage/
+.nyc_output/
+
+# ============================================================================
+# Note: .opencode/skills, .opencode/agents, .opencode/commands, .opencode/plugins
+# are project source and ARE tracked. Only local/runtime state above is ignored.
+# ============================================================================
