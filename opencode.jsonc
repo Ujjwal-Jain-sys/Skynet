@@ -45,35 +45,27 @@
       },
       "playwright": {
         "type": "local",
-        "command": ["npx", "-y", "@playwright/mcp"],
-        "disabled": true,
-        "note": "Requires Node.js/npm (npx). Install Node.js to enable browser testing."
+        "command": ["npx", "-y", "@playwright/mcp"]
       },
       "postgres": {
         "type": "local",
         "command": ["npx", "-y", "@modelcontextprotocol/server-postgres"],
         "environment": {
           "DATABASE_URL": "{env:DATABASE_URL}"
-        },
-        "disabled": true,
-        "note": "Requires Node.js/npm (npx) and a DATABASE_URL. Install Node.js to enable DB inspection."
+        }
       },
       "sentry": {
         "type": "remote",
         "url": "https://mcp.sentry.dev/mcp",
-        "disabled": true,
-        "note": "Requires OAuth sign-in. Disabled by default; enable when you have a Sentry account."
+        "oauth": {}
       }
     }
   },
 
   "plugins": [
-    // The following Skynet plugins require Node.js + @opencode/plugin SDK
-    // (npm install) to load. They are disabled until Node.js is installed.
-    // Source code remains in .opencode/plugins/ for later use.
-    "-.opencode/plugins/skynet-orchestrator",
-    "-.opencode/plugins/skynet-task-tracker",
-    "-.opencode/plugins/skynet-notifier",
-    "-.opencode/plugins/skynet-guardrails"
+    ".opencode/plugins/skynet-orchestrator",
+    ".opencode/plugins/skynet-task-tracker",
+    ".opencode/plugins/skynet-notifier",
+    ".opencode/plugins/skynet-guardrails"
   ]
 }
