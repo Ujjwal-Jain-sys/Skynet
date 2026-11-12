@@ -39,6 +39,9 @@ Each department hands off to the next like a well-organized team, and nothing is
 <img src="https://img.shields.io/badge/OpenCode_V2-1A1A1A?style=for-the-badge" alt="OpenCode V2" height="28" />
 <img src="https://img.shields.io/badge/Node.js_20+-339933?style=for-the-badge&logo=nodedotjson&logoColor=white" alt="Node.js 20+" height="28" />
 
+- **OpenCode V2** — Agent orchestration framework. It runs the master + 15 department subagents that decompose your brief into workstreams, delegate them, and monitor quality gates.
+- **Node.js 20+** — Runtime for both the engine backend and the web UI. Chosen for its mature TypeScript ecosystem, fast startup, and wide hosting support (Vercel, Render, etc.).
+
 ### Backend (`engine/`)
 <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" height="28" />
 <img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express" height="28" />
@@ -46,6 +49,13 @@ Each department hands off to the next like a well-organized team, and nothing is
 <img src="https://img.shields.io/badge/Vitest-6E9F18?style=for-the-badge&logo=vitest&logoColor=white" alt="Vitest" height="28" />
 <img src="https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white" alt="ESLint" height="28" />
 <img src="https://img.shields.io/badge/tsx-1F2937?style=for-the-badge" alt="tsx" height="28" />
+
+- **TypeScript** — Type-safe backend code. Prevents runtime bugs when passing project artifacts between departments and makes the orchestration logic easier to refactor.
+- **Express** — Lightweight HTTP API for the engine. Simple, well-documented, and easy to deploy on Render or any Node host.
+- **Zod** — Runtime validation for project briefs, delegation payloads, and API requests. Catches malformed input before it reaches the agents.
+- **Vitest** — Unit and integration tests for the engine. Fast, TypeScript-native, and matches the tooling used across the repo.
+- **ESLint** — Linting to keep backend code consistent across contributors.
+- **tsx** — TypeScript execution for development (`tsx watch`) without a separate compile step.
 
 ### Frontend (`web/`)
 <img src="https://img.shields.io/badge/Next.js_14-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js 14" height="28" />
@@ -56,6 +66,14 @@ Each department hands off to the next like a well-organized team, and nothing is
 <img src="https://img.shields.io/badge/Resend-FF4B37?style=for-the-badge" alt="Resend" height="28" />
 <img src="https://img.shields.io/badge/Lucide_React-000000?style=for-the-badge&logo=lucide&logoColor=white" alt="Lucide React" height="28" />
 
+- **Next.js 14 (App Router)** — The user-facing UI. Server components keep the initial page load fast, and the App Router gives us clean routes for projects, previews, and API endpoints.
+- **React 18** — Component framework for the UI. Concurrent features keep the interface responsive while agents work in the background.
+- **Tailwind CSS** — Utility-first styling. Lets us build a clean, non-technical-user-friendly interface quickly without managing a separate CSS file per component.
+- **Clerk** — Authentication. Handles sign-in, sessions, and user management so users can own their projects without us building auth from scratch.
+- **Neon (serverless Postgres)** — Database for project artifacts, user data, and deployment records. Serverless means it scales to zero and pairs well with Vercel.
+- **Resend** — Transactional email for notifications (deploy complete, approval requests, etc.).
+- **Lucide React** — Consistent, lightweight icon set for the UI.
+
 ### Infrastructure & Deployment
 <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel" height="28" />
 <img src="https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white" alt="Render" height="28" />
@@ -63,10 +81,16 @@ Each department hands off to the next like a well-organized team, and nothing is
 <img src="https://img.shields.io/badge/Ansible-EE0000?style=for-the-badge&logo=ansible&logoColor=white" alt="Ansible" height="28" />
 <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" alt="GitHub Actions" height="28" />
 
+- **Vercel** — Frontend hosting for `web/`. Zero-config deploys, automatic previews for every PR, and edge delivery for fast page loads.
+- **Render** — Engine API hosting for `engine/`. Managed Node hosting with automatic deploys and health checks.
+- **Terraform** — Infrastructure as code for cloud resources (databases, networking). Declarative and version-controlled.
+- **Ansible** — Configuration management and provisioning for the engine environment.
+- **GitHub Actions** — CI/CD pipeline that runs lint, typecheck, and tests on every push and PR.
+
 ### AI & Tooling
-- **MCP servers**: Context7 (docs), Playwright (browser automation), Postgres (database), Sentry (error tracking)
-- **OpenCode plugins**: orchestrator, task-tracker, notifier, guardrails
-- **Skills**: 78+ agent skills for design, motion, 3D, GSAP, SEO, and more
+- **MCP servers**: Context7 (docs lookup), Playwright (browser automation), Postgres (database access), Sentry (error tracking) — give the agents external capabilities without hardcoding integrations.
+- **OpenCode plugins**: orchestrator, task-tracker, notifier, guardrails — extend the master agent with delegation, status tracking, notifications, and quality guardrails.
+- **Skills**: 78+ agent skills for design, motion, 3D, GSAP, SEO, and more — specialized capabilities that departments load on demand.
 
 ---
 
