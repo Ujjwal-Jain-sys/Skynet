@@ -1,0 +1,73 @@
+{
+  "_meta": {
+    "owner": "devops",
+    "phase": "deploy",
+    "status": "review",
+    "updated": "2026-11-12T22:30:00Z"
+  },
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "version": 2,
+  "framework": "nextjs",
+  "buildCommand": "npm ci && npm run build",
+  "installCommand": "npm ci",
+  "devCommand": "npm run dev",
+  "outputDirectory": ".next",
+  "git": {
+    "autoDeploy": true,
+    "autoAssignCustomDomains": false,
+    "preview": true
+  },
+  "env": {
+    "DATABASE_URL": {
+      "sensitivity": "secret"
+    },
+    "SMTP_HOST": {
+      "sensitivity": "secret"
+    },
+    "SMTP_PORT": {
+      "sensitivity": "non_secret",
+      "value": "587"
+    },
+    "SMTP_SECURE": {
+      "sensitivity": "non_secret",
+      "value": "false"
+    },
+    "SMTP_USER": {
+      "sensitivity": "secret"
+    },
+    "SMTP_PASS": {
+      "sensitivity": "secret"
+    },
+    "CONTACT_EMAIL_TO": {
+      "sensitivity": "non_secret"
+    },
+    "SMTP_FROM": {
+      "sensitivity": "non_secret",
+      "value": "\"Portfolio\" <noreply@example.com>"
+    },
+    "NODE_ENV": {
+      "sensitivity": "non_secret",
+      "value": "production"
+    }
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "Referrer-Policy", "value": "no-referrer" },
+        { "key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains; preload" },
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https://placehold.co; connect-src 'self' https://placehold.co; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" }
+      ]
+    },
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Content-Security-Policy", "value": "default-src 'none'" }
+      ]
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
+}

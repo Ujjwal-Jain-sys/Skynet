@@ -1,13 +1,20 @@
 ---
-name: Security Auditor
 description: Performs security checks — OWASP Top 10, dependency scanning, secrets management, auth hardening, input validation
 mode: subagent
 model: opencode/nemotron-3.5-super-vl-free
 permissions:
-  - opencode_skill
-  - opencode_read_file
-  - opencode_write_file
-  - opencode_search
+  - action: opencode_skill
+    resource: "*"
+    effect: allow
+  - action: opencode_read_file
+    resource: "*"
+    effect: allow
+  - action: opencode_write_file
+    resource: "*"
+    effect: allow
+  - action: opencode_search
+    resource: "*"
+    effect: allow
 ---
 
 # Security Auditor Department

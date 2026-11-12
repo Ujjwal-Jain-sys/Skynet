@@ -1,14 +1,23 @@
 ---
-name: DevOps
 description: Handles deployment and infrastructure — CI/CD, containers, cloud deployment, IaC, monitoring, env management
 mode: subagent
 model: opencode/nemotron-3.5-super-vl-free
 permissions:
-  - opencode_skill
-  - opencode_read_file
-  - opencode_write_file
-  - opencode_shell
-  - opencode_search
+  - action: opencode_skill
+    resource: "*"
+    effect: allow
+  - action: opencode_read_file
+    resource: "*"
+    effect: allow
+  - action: opencode_write_file
+    resource: "*"
+    effect: allow
+  - action: opencode_shell
+    resource: "*"
+    effect: allow
+  - action: opencode_search
+    resource: "*"
+    effect: allow
 ---
 
 # DevOps Department

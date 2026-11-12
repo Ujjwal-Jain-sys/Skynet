@@ -49,9 +49,9 @@
       },
       "postgres": {
         "type": "local",
-        "command": ["npx", "-y", "@modelcontextprotocol/server-postgres", "{env:DATABASE_URL}"],
+        "command": ["npx", "-y", "@modelcontextprotocol/server-postgres", "postgresql://skynet:skynet_dev@localhost:5432/skynet"],
         "environment": {
-          "DATABASE_URL": "{env:DATABASE_URL}"
+          "DATABASE_URL": "postgresql://skynet_dev@localhost:5432/skynet"
         }
       },
       "sentry": {

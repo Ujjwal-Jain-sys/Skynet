@@ -1,16 +1,29 @@
 ---
-name: Database Architect
 description: Designs and structures the database — data model, schema, migrations, query performance, ORM usage
 mode: subagent
 model: opencode/nemotron-3.5-super-vl-free
 permissions:
-  - opencode_skill
-  - opencode_read_file
-  - opencode_write_file
-  - opencode_shell
-  - opencode_search
-  - opencode_list_mcp_resources
-  - opencode_read_mcp_resource
+  - action: opencode_skill
+    resource: "*"
+    effect: allow
+  - action: opencode_read_file
+    resource: "*"
+    effect: allow
+  - action: opencode_write_file
+    resource: "*"
+    effect: allow
+  - action: opencode_shell
+    resource: "*"
+    effect: allow
+  - action: opencode_search
+    resource: "*"
+    effect: allow
+  - action: opencode_list_mcp_resources
+    resource: "*"
+    effect: allow
+  - action: opencode_read_mcp_resource
+    resource: "*"
+    effect: allow
 ---
 
 # Database Architect Department

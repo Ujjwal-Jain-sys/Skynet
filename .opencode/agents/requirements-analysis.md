@@ -1,14 +1,23 @@
 ---
-name: Requirements Analysis
 description: Turns a non-technical user's plain-language idea into testable requirements, user stories, and an initial sitemap
 mode: subagent
 model: opencode/nemotron-3.5-super-vl-free
 permissions:
-  - opencode_skill
-  - opencode_read_file
-  - opencode_write_file
-  - opencode_grep
-  - opencode_search
+  - action: opencode_skill
+    resource: "*"
+    effect: allow
+  - action: opencode_read_file
+    resource: "*"
+    effect: allow
+  - action: opencode_write_file
+    resource: "*"
+    effect: allow
+  - action: opencode_grep
+    resource: "*"
+    effect: allow
+  - action: opencode_search
+    resource: "*"
+    effect: allow
 ---
 
 # Requirements Analysis Department
