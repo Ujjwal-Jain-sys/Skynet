@@ -36,30 +36,32 @@ Each department hands off to the next like a well-organized team, and nothing is
 ## 🛠️ Tech stack
 
 ### Platform
-- **OpenCode V2** — AI agent orchestration framework
-- **Node.js 20+** — runtime for engine and web
+<img src="https://img.shields.io/badge/OpenCode_V2-1A1A1A?style=for-the-badge" alt="OpenCode V2" height="28" />
+<img src="https://img.shields.io/badge/Node.js_20+-339933?style=for-the-badge&logo=nodedotjson&logoColor=white" alt="Node.js 20+" height="28" />
 
-### Backend (engine/)
-- **TypeScript** (strict)
-- **Express** — HTTP API
-- **Zod** — runtime validation
-- **Vitest** — testing
-- **ESLint** — linting
-- **tsx** — TypeScript execution
+### Backend (`engine/`)
+<img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" height="28" />
+<img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express" height="28" />
+<img src="https://img.shields.io/badge/Zod-3E68B6?style=for-the-badge" alt="Zod" height="28" />
+<img src="https://img.shields.io/badge/Vitest-6E9F18?style=for-the-badge&logo=vitest&logoColor=white" alt="Vitest" height="28" />
+<img src="https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white" alt="ESLint" height="28" />
+<img src="https://img.shields.io/badge/tsx-1F2937?style=for-the-badge" alt="tsx" height="28" />
 
-### Frontend (web/)
-- **Next.js 14** (App Router, React 18)
-- **Tailwind CSS** — styling
-- **Clerk** — authentication
-- **Neon (serverless Postgres)** — database
-- **Resend** — email
-- **Lucide React** — icons
+### Frontend (`web/`)
+<img src="https://img.shields.io/badge/Next.js_14-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js 14" height="28" />
+<img src="https://img.shields.io/badge/React_18-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React 18" height="28" />
+<img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" height="28" />
+<img src="https://img.shields.io/badge/Clerk-6C47FF?style=for-the-badge&logo=clerk&logoColor=white" alt="Clerk" height="28" />
+<img src="https://img.shields.io/badge/Neon-08B26D?style=for-the-badge&logo=neon&logoColor=white" alt="Neon Postgres" height="28" />
+<img src="https://img.shields.io/badge/Resend-FF4B37?style=for-the-badge" alt="Resend" height="28" />
+<img src="https://img.shields.io/badge/Lucide_React-000000?style=for-the-badge&logo=lucide&logoColor=white" alt="Lucide React" height="28" />
 
 ### Infrastructure & Deployment
-- **Vercel** — frontend hosting
-- **Render** — engine API hosting
-- **Terraform / Ansible** — infrastructure as code (`infra/`)
-- **GitHub Actions** — CI/CD
+<img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel" height="28" />
+<img src="https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white" alt="Render" height="28" />
+<img src="https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white" alt="Terraform" height="28" />
+<img src="https://img.shields.io/badge/Ansible-EE0000?style=for-the-badge&logo=ansible&logoColor=white" alt="Ansible" height="28" />
+<img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" alt="GitHub Actions" height="28" />
 
 ### AI & Tooling
 - **MCP servers**: Context7 (docs), Playwright (browser automation), Postgres (database), Sentry (error tracking)
