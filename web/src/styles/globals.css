@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-bg text-text antialiased;
+    font-family: var(--font-sans);
+    margin: 0;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-text;
+  }
+  a {
+    @apply text-primary hover:text-primary-hover underline underline-offset-4;
+  }
+  button,
+  [role="button"],
+  input,
+  select,
+  textarea {
+    @apply touch-target-min;
+    touch-action: manipulation;
+  }
+}
+
+@layer utilities {
+  .touch-target-min {
+    min-width: var(--touch-target-min, 44px);
+    min-height: var(--touch-target-min, 44px);
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}

@@ -6,11 +6,5 @@
   "framework": "nextjs",
   "installCommand": "npm install",
   "devCommand": "npm run dev",
-  "regions": ["iad1"],
-  "env": {
-    "NEXT_PUBLIC_ENGINE_URL": {
-      "@vercel/postgres": null,
-      "description": "URL of the deployed Skynet engine API (e.g. https://skynet-engine.onrender.com)"
-    }
-  }
+  "regions": ["iad1"]
 }

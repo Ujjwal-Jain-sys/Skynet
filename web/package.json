@@ -10,23 +10,31 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@neon/config": "^1.14.0",
+    "@neon/env": "^2.1.3",
+    "@neondatabase/serverless": "^1.2.0",
+    "better-auth": "^1.0.0",
+    "clsx": "^2.1.0",
+    "drizzle-orm": "^0.45.4",
+    "lucide-react": "^0.380.0",
     "next": "^14.2.0",
+    "next-themes": "^0.4.6",
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
-    "lucide-react": "^0.380.0",
-    "clsx": "^2.1.0",
+    "resend": "^6.38.0",
     "tailwind-merge": "^2.3.0"
   },
   "devDependencies": {
     "@types/node": "^20.12.0",
     "@types/react": "^18.3.0",
     "@types/react-dom": "^18.3.0",
-    "typescript": "^5.4.5",
-    "tailwindcss": "^3.4.3",
-    "postcss": "^8.4.38",
     "autoprefixer": "^10.4.19",
     "eslint": "^8.57.0",
-    "eslint-config-next": "^14.2.0"
+    "eslint-config-next": "^14.2.0",
+    "playwright": "^1.53.1",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5"
   },
   "engines": {
     "node": ">=20.0.0"
