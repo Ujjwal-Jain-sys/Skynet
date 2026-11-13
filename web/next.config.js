@@ -1,6 +1,15 @@
 /** @type {import('next').NextConfig} */
+const path = require("path");
+
 const nextConfig = {
   reactStrictMode: true,
+  webpack: (config) => {
+    // Resolve @/ aliases to ./src in all environments (including VERCEL=1
+    // production builds where tsconfig path aliases are not picked up by
+    // Next.js's built-in aliasing).
+    config.resolve.alias["@"] = path.resolve(__dirname, "src");
+    return config;
+  },
   async headers() {
     return [
       {
