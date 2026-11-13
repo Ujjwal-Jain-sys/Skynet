@@ -61,7 +61,7 @@ Each department hands off to the next like a well-organized team, and nothing is
 <img src="https://img.shields.io/badge/Next.js_14-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js 14" height="28" />
 <img src="https://img.shields.io/badge/React_18-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React 18" height="28" />
 <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" height="28" />
-<img src="https://img.shields.io/badge/Clerk-6C47FF?style=for-the-badge&logo=clerk&logoColor=white" alt="Clerk" height="28" />
+<img src="https://img.shields.io/badge/Better_Auth-000000?style=for-the-badge&logo=auth0&logoColor=white" alt="Better Auth" height="28" />
 <img src="https://img.shields.io/badge/Neon-08B26D?style=for-the-badge&logo=neon&logoColor=white" alt="Neon Postgres" height="28" />
 <img src="https://img.shields.io/badge/Resend-FF4B37?style=for-the-badge" alt="Resend" height="28" />
 <img src="https://img.shields.io/badge/Lucide_React-000000?style=for-the-badge&logo=lucide&logoColor=white" alt="Lucide React" height="28" />
@@ -69,7 +69,7 @@ Each department hands off to the next like a well-organized team, and nothing is
 - **Next.js 14 (App Router)** — The user-facing UI. Server components keep the initial page load fast, and the App Router gives us clean routes for projects, previews, and API endpoints.
 - **React 18** — Component framework for the UI. Concurrent features keep the interface responsive while agents work in the background.
 - **Tailwind CSS** — Utility-first styling. Lets us build a clean, non-technical-user-friendly interface quickly without managing a separate CSS file per component.
-- **Clerk** — Authentication. Handles sign-in, sessions, and user management so users can own their projects without us building auth from scratch.
+- **Better Auth** — Authentication. Self-hosted on Neon Postgres; handles sign-in, sessions, MFA, password reset, and user management. No external account verification needed.
 - **Neon (serverless Postgres)** — Database for project artifacts, user data, and deployment records. Serverless means it scales to zero and pairs well with Vercel.
 - **Resend** — Transactional email for notifications (deploy complete, approval requests, etc.).
 - **Lucide React** — Consistent, lightweight icon set for the UI.
@@ -125,18 +125,87 @@ cd Skynet
 
 ### 2. Install Node.js (LTS)
 
-Skynet requires **Node.js 20 or higher**. If you don't have it:
+Skynet requires **Node.js 20 or higher**. Choose your platform below:
 
-```bash
-# Using nvm (recommended)
+<details>
+<summary>🪟 Windows</summary>
+
+**Option A: nvm-windows (recommended)**
+
+1. Download and install [nvm-windows](https://github.com/coreybutler/nvm-windows/releases)
+2. Open PowerShell or Git Bash as Administrator
+3. Run:
+
+```powershell
 nvm install 20
 nvm use 20
-
-# Or on Fedora
-sudo dnf install nodejs npm
+nvm alias default 20
 ```
 
-Verify:
+**Option B: winget**
+
+```powershell
+winget install OpenJS.NodeJS
+```
+
+> ⚠️ If PowerShell blocks scripts, run: `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`<br>
+> Use Git Bash if you prefer Unix-style commands (`cp`, `cd`, etc.)
+
+</details>
+
+<details>
+<summary>🐧 Linux (Fedora, Ubuntu, Debian, etc.)</summary>
+
+**Option A: nvm (recommended — no sudo needed)**
+
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+source ~/.bashrc   # or ~/.zshrc
+
+nvm install 20
+nvm use 20
+nvm alias default 20
+```
+
+**Option B: Distro package manager**
+
+```bash
+# Fedora
+sudo dnf install nodejs npm
+
+# Ubuntu / Debian
+sudo apt update && sudo apt install nodejs npm
+```
+
+> ⚠️ Do not use `sudo npm install` — it causes permission issues. nvm installs Node in your home directory.
+
+</details>
+
+<details>
+<summary>🍎 macOS</summary>
+
+**Option A: nvm (recommended)**
+
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+source ~/.zshrc   # or ~/.bash_profile
+
+nvm install 20
+nvm use 20
+nvm alias default 20
+```
+
+**Option B: Homebrew**
+
+```bash
+brew install node
+```
+
+> ⚠️ On Apple Silicon (M1/M2/M3), Node runs natively via ARM64. If you hit native module errors, install Xcode command line tools: `xcode-select --install`
+
+</details>
+
+Verify on any platform:
 
 ```bash
 node --version   # v20.x.x or higher
@@ -145,11 +214,29 @@ npm --version
 
 ### 3. Set up environment variables
 
+<details>
+<summary>🪟 Windows (PowerShell)</summary>
+
+```powershell
+Copy-Item .env.example .env
+```
+
+Then edit `.env` with Notepad or VS Code and add your values.
+
+</details>
+
+<details>
+<summary>🐧 Linux / 🍎 macOS</summary>
+
 ```bash
 cp .env.example .env
 ```
 
-Then edit `.env` and add your values:
+Then edit `.env` with your editor (vim, nano, VS Code, etc.) and add your values.
+
+</details>
+
+Edit `.env` and add your values:
 
 ```env
 # Database
